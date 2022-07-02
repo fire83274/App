@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../JS/jquery-3.6.0.min.js"></script> 
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="container mx-auto max-w-full flex flex-col">
+        <div class="flex flex-row items-center justify-between bg-zinc-900 p-2">
+            <div class="flex flex-row items-center justify-around w-full">
+                <p class="text-white w-full">
+                   @fire83274
+                </p>
+            </div>
+        </div>
+        <div class="flex flex-row items-center justify-between p-2">
+            <div>
+                <a href="/index.html"><img src="../img/logo/logo.png" alt="" class="w-16 h-16 p-2 animate-bounce"></a>
+            </div>            
+            <div>
+                <button class="p-2" id="btn">
+                    <img src="../img/btn/btn1.png" alt="" class="w-10 h-10" id="btn1">
+                    <img src="../img/btn/btn2.png" alt="" class="w-10 h-10 hidden" id="btn2">
+                </button>
+            </div>          
+        </div>
+    </header>
+
+    <!-- Навигационное меню -->
+    <div class="flex flex-col bg-zinc-900 p-2 justify-end w-full absolute -mt-3 gap-2 hidden text-white z-10" id="block">
+        <a href="/index.html#rasp1">Расписание на сегодня</a>
+        <a href="/index.html#rasp2">Расписание на завтра</a>
+        <button class="w-16 text-left" id="rab">Работы</button>
+        <a href="/index.html#pasp1">Тест</a>
+    </div>
+
+    <!-- Иконка fa-chevron-up (Font Awesome) -->
+    <div class="scrollup">        
+        <i class="fa fa-chevron-up"></i>
+    </div>     
+    <script>
+        $(function() {
+          // при нажатии на кнопку scrollup
+          $('.scrollup').click(function() {
+            // переместиться в верхнюю часть страницы
+            $("html, body").animate({
+              scrollTop:0
+            },1000);
+          })
+        })
+        // при прокрутке окна (window)
+        $(window).scroll(function() {
+          // если пользователь прокрутил страницу более чем на 0px
+          if ($(this).scrollTop()>0) {
+            // то сделать кнопку scrollup видимой
+            $('.scrollup').fadeIn();
+          }
+          // иначе скрыть кнопку scrollup
+          else {
+            $('.scrollup').fadeOut();
+          }
+        });
+    </script>
+
+    <!-- Начало основного контента -->   
+    <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="flex justify-center p-6">
+            <div class="rounded-lg shadow-lg bg-white max-w-sm flex items-center">
+              <a href="https://cloud.mail.ru/public/9Ws4/5hmBHgCte" target="_blank">
+                <img class="rounded-t-lg p-4 w-32" src="../img/docs/Котейка.png" alt=""/>
+              </a>
+              <div class="p-6">
+                <h5 class="text-gray-900 text-xl font-medium mb-2">Котейка</h5>               
+                <a href="https://cloud.mail.ru/public/9Ws4/5hmBHgCte" target="_blank" class=" inline-block px-6 py-2.5 bg-zinc-900 text-white font-medium text-xs
+                 leading-tight uppercase rounded shadow-md">Перейти</a>
+              </div>
+            </div>
+        </div>
+        <div class="flex justify-center p-6">
+            <div class="rounded-lg shadow-lg bg-white max-w-sm  flex items-center">
+              <a href="https://cloud.mail.ru/public/h4gM/EA4Jbj1He" target="_blank">
+                <img class="rounded-t-lg p-4 w-32" src="../img/docs/Эко.png" alt=""/>
+              </a>
+              <div class="p-6">
+                <h5 class="text-gray-900 text-xl font-medium mb-2">Эко-дом</h5>               
+                <a href="https://cloud.mail.ru/public/h4gM/EA4Jbj1He" target="_blank" class=" inline-block px-6 py-2.5 bg-zinc-900 text-white font-medium text-xs
+                 leading-tight uppercase rounded shadow-md">Перейти</a>
+              </div>
+            </div>
+        </div>
+        <div class="flex justify-center p-6">
+            <div class="rounded-lg shadow-lg bg-white max-w-sm  flex items-center">
+              <a href="https://cloud.mail.ru/public/7vk1/MyrS7mwAS" target="_blank">
+                <img class="rounded-t-lg p-4 w-32" src="../img/docs/На луну.png" alt=""/>
+              </a>
+              <div class="p-6">
+                <h5 class="text-gray-900 text-xl font-medium mb-2">На луну</h5>               
+                <a href="https://cloud.mail.ru/public/7vk1/MyrS7mwAS" target="_blank" class=" inline-block px-6 py-2.5 bg-zinc-900 text-white font-medium text-xs
+                 leading-tight uppercase rounded shadow-md">Перейти</a>
+              </div>
+            </div>
+        </div>
+        <div class="flex justify-center p-6">
+            <div class="rounded-lg shadow-lg bg-white max-w-sm  flex items-center">
+              <a href="https://cloud.mail.ru/public/Ka2a/prZbEByRR" target="_blank">
+                <img class="rounded-t-lg p-4 w-32" src="../img/docs/Практика.png" alt=""/>
+              </a>
+              <div class="p-6">
+                <h5 class="text-gray-900 text-xl font-medium mb-2">Практика</h5>               
+                <a href="https://cloud.mail.ru/public/Ka2a/prZbEByRR" target="_blank" class=" inline-block px-6 py-2.5 bg-zinc-900 text-white font-medium text-xs
+                 leading-tight uppercase rounded shadow-md">Перейти</a>
+              </div>
+            </div>
+        </div>
+        <div class="flex justify-center p-6">
+            <div class="rounded-lg shadow-lg bg-white max-w-sm  flex items-center">
+              <a href="https://cloud.mail.ru/public/8Fxf/Vixjyxo8f" target="_blank">
+                <img class="rounded-t-lg p-4 w-32" src="../img/docs/Курсовой.png" alt=""/>
+              </a>
+              <div class="p-6">
+                <h5 class="text-gray-900 text-xl font-medium mb-2">Курсовой</h5>               
+                <a href="https://cloud.mail.ru/public/8Fxf/Vixjyxo8f" target="_blank" class=" inline-block px-6 py-2.5 bg-zinc-900 text-white font-medium text-xs
+                 leading-tight uppercase rounded shadow-md">Перейти</a>
+              </div>
+            </div>
+        </div>
+    </div>
+        
+    <!-- Футер -->
+    <footer class="container mx-auto flex flex-col bg-zinc-900 text-white p-4 mt-4 max-w-full">
+        <div class="flex flex-row gap-4 items-center justify-center">
+            <a href="" class="p-2">Контакты</a>
+            <a href="" class="p-2">Неисправность?</a>
+        </div>
+        <div class="border border-white my-2"></div>
+        <a href="" class="text-center">© 2022 Copyright:fire83274</a>
+    </footer>
+
+
+<script src="../JS/script.js"></script>
+</body>
+</html>

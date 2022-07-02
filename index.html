@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="Assets/JS/jquery-3.6.0.min.js"></script> 
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="container mx-auto max-w-full flex flex-col">
+        <div class="flex flex-row items-center justify-between bg-zinc-900 p-2">
+            <div class="flex flex-row items-center justify-around w-full">
+                <p class="text-white w-full">
+                   @fire83274
+                </p>
+            </div>
+        </div>
+        <div class="flex flex-row items-center justify-between p-2">
+            <div>
+                <img src="Assets/img/logo/logo.png" alt="" class="w-16 h-16 p-2 animate-bounce">
+            </div>            
+            <div>
+                <button class="p-2" id="btn">
+                    <img src="Assets/img/btn/btn1.png" alt="" class="w-10 h-10" id="btn1">
+                    <img src="Assets/img/btn/btn2.png" alt="" class="w-10 h-10 hidden" id="btn2">
+                </button>
+            </div>          
+        </div>
+    </header>
+
+    <!-- Навигационное меню -->
+    <div class="flex flex-col bg-zinc-900 p-2 justify-end w-full absolute -mt-3 gap-2 hidden text-white z-10" id="block">
+        <a href="index.html#rasp1">Расписание на сегодня</a>
+        <a href="index.html#rasp2">Расписание на завтра</a>
+        <button class="w-16 text-left" id="rab">Работы</button>
+        <a href="index.html#pasp1">Тест</a>
+    </div>
+
+    <!-- Иконка fa-chevron-up (Font Awesome) -->
+    <div class="scrollup">        
+        <i class="fa fa-chevron-up"></i>
+    </div>     
+    <script>
+        $(function() {
+          // при нажатии на кнопку scrollup
+          $('.scrollup').click(function() {
+            // переместиться в верхнюю часть страницы
+            $("html, body").animate({
+              scrollTop:0
+            },1000);
+          })
+        })
+        // при прокрутке окна (window)
+        $(window).scroll(function() {
+          // если пользователь прокрутил страницу более чем на 0px
+          if ($(this).scrollTop()>0) {
+            // то сделать кнопку scrollup видимой
+            $('.scrollup').fadeIn();
+          }
+          // иначе скрыть кнопку scrollup
+          else {
+            $('.scrollup').fadeOut();
+          }
+        });
+    </script>
+
+    <!-- Начало основного контента -->   
+    <p class="text-center text-lg font-bold py-4" id="rasp1">Расписание(сегодня)</p>
+    <iframe src="https://rsp.chemk.org/4korp/today.htm" class="w-full h-96" frameborder="0">
+    </iframe>
+   
+    <p class="text-center text-lg font-bold py-4" id="rasp2">Расписание(завтра)</p>    
+    <iframe src="https://rsp.chemk.org/4korp/tomorrow.htm" class="w-full h-96" frameborder="0">
+    </iframe>
+        
+    <!-- Футер -->
+    <footer class="container mx-auto flex flex-col bg-zinc-900 text-white p-4 mt-4 max-w-full">
+        <div class="flex flex-row gap-4 items-center justify-center">
+            <a href="" class="p-2">Контакты</a>
+            <a href="" class="p-2">Неисправность?</a>
+        </div>
+        <div class="border border-white my-2"></div>
+        <a href="" class="text-center">© 2022 Copyright:fire83274</a>
+    </footer>
+
+
+<script src="Assets/JS/script.js"></script>
+</body>
+</html>
